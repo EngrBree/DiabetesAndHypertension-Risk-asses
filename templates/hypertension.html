@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Blood Pressure Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+    background:url("static/img/y.png") no-repeat center center;;
+    background-size: cover;
+
+}
+
+.card {
+    margin-top: 50px; /* Adjust as needed */
+    background: rgba(255, 255, 255,0.8);
+    border-radius: 15px;
+}
+
+.header {
+    background-color:black; /* White background for the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 10px 20px; /* Padding around the content */
+    display: flex;
+    justify-content: space-between; /* Space out navigation items */
+    align-items: center; /* Center items vertically */
+    color: #d5d5d5;
+    font-weight: bold;
+    border-radius:15px ;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-left a,
+.nav-right a {
+    text-decoration: none;
+    color: #333; /* Dark text for readability */
+    margin-right: 15px; /* Space out the navigation links */
+    font-size: 16px; /* Size of the navigation text */
+    padding: 5px 10px; /* Padding for clickable area */
+    border-radius: 5px; /* Rounded corners for links */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a:hover,
+.nav-left a:hover {
+    background-color: #e6f7ff; /* Light blue background on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+    .nav-left,
+    .nav-right {
+        margin-bottom: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/prediction">Predict</a>
+            </div>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+                    <a class="dropdown-item" href="/results_history">Results History</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">
+       <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Hypertension Risk Assessment</h3>
+
+                             <form action="/hypertension" method="post">
+                                  <div class="form-row">
+
+
+                               <div class="form-group col-md-6">
+                <label for="phys_hlth">Height:</label>
+                <input type="text" class="form-control" name="height"  placeholder="Enter your Height in meters" required>
+            </div>
+
+                              <div class="form-group col-md-6">
+                <label for="phys_hlth">Weight:</label>
+                <input type="text" class="form-control" name="weight"  placeholder="Enter your Weight in Kgs" required>
+            </div>
+
+
+            <div class="form-group col-md-6">
+                <label for="high_chol">High Cholesterol:</label>
+                <select required class="form-control" name="high_chol">
+                <option disabled selected>What is your cholestrol Level</option>
+                                <option value="1">High</option>
+                                <option value="0">Low</option>
+                    </select>
+            </div>
+
+
+
+            <div class="form-group col-md-6">
+                <label for="smoker">Smoker:</label>
+                <select class="form-control" name="smoker" required>
+                    <option disabled selected>Are you a Smoker?</option>
+                                <option value="1">Yes</option>
+                                <option value="0"> No</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="phys_activity">Physical Activity:</label>
+                <select class="form-control" name="phys_activity" required>
+                    <option disabled selected>Your physical activity</option>
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="phys_hlth">Physical Health:</label>
+                <input type="text" class="form-control" name="phys_hlth"  placeholder="Your unwell days in last 30 days" required>
+            </div>
+
+                <div class="form-group col-md-6">
+                <label for="hvy_alcohol"> Alcohol Consumption:</label>
+                <select class="form-control" name="hvy_alcohol" required>
+                    <option disabled selected>Your alcohol consumption level</option>
+                                <option value="1">High</option>
+                                <option value="0">Low</option>
+                </select>
+            </div>
+
+                                  </div>
+            <!-- Add other form-group elements for the remaining features -->
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

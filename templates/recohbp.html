@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Management Alert</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("/static/img/y.png") no-repeat center center ;
+            background-size: cover;
+        }
+        .header {
+            background-color: black; /* White background for the header */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            padding: 10px 20px; /* Padding around the content */
+            display: flex;
+            justify-content: space-between; /* Space out navigation items */
+            align-items: center; /* Center items vertically */
+            color: #d5d5d5;
+            font-weight: bold;
+            border-radius: 15px ;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-left a,
+        .nav-right a {
+            text-decoration: none;
+            color: #333; /* Dark text for readability */
+            margin-right: 15px; /* Space out the navigation links */
+            font-size: 16px; /* Size of the navigation text */
+            padding: 5px 10px; /* Padding for clickable area */
+            border-radius: 5px; /* Rounded corners for links */
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-right a:hover,
+        .nav-left a:hover {
+            background-color: #e6f7ff; /* Light blue background on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+            }
+            .nav-left,
+            .nav-right {
+                margin-bottom: 10px;
+            }
+        }
+
+        .container {
+            margin-top: 50px;
+            width: 90%;
+            left: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .alert {
+            margin-bottom: 20px;
+        }
+
+        .user-info,
+        .recommendations {
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .recommendations {
+            height: 500px;
+            border-radius: 20px;
+            background: #b1b3b3;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        .recommendations p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+   <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/prediction">Predict</a>
+            </div>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Profile
+
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+                    <a class="dropdown-item" href="/results_history">Results History</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% if prediction %}
+            <div class="user-info">
+                <div class="alert alert-info">
+                    <p>{{ message }}</p>
+                </div>
+            </div>
+            <div class="recommendations">
+                <h2>Recommendations:</h2>
+                 <p><strong>Diet Recommendation:</strong> {{ diet_recommendation }}</p>
+            {% if need_diet_help %}
+                <a href="/contact/nutritionist" class="btn btn-primary">Contact Nutritionist</a>
+            {% endif %}
+            <p><strong>Exercise Recommendation:</strong> {{ exercise_recommendation }}</p>
+            {% if need_exercise_help %}
+                <a href="/contact/physiotherapist" class="btn btn-primary">Contact Physiotherapist</a>
+            {% endif %}
+            <p><strong>Lifestyle Recommendation:</strong> {{ lifestyle_recommendation }}</p>
+            {% if need_lifestyle_help %}
+                <a href="/contact/lifestyle-coach" class="btn btn-primary">Contact Lifestyle Coach</a>
+            {% endif %}
+
+
+               {% if health_alert %}
+                <div class="health-alert">
+                    <p class="alert alert-danger">{{ health_alert }}</p>
+                <a href="/contact/physiotherapist" class="btn btn-primary">Contact Specialist</a>
+                </div>
+            {% endif %}
+
+            </div>
+
+            </div>
+        {% endif %}
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

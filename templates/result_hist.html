@@ -1,0 +1,124 @@
+<!-- results_history.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+            background:white;
+            color: #070707;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 20px;
+            color: #000000;
+        }
+        .header {
+    background-color: #000000; /* White background for the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 10px 20px; /* Padding around the content */
+    display: flex;
+    justify-content: space-between; /* Space out navigation items */
+    align-items: center; /* Center items vertically */
+            color: #000000;
+            margin-top: 10px;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.nav-left a,
+.nav-right a {
+    text-decoration: none;
+    color: #000000; /* Dark text for readability */
+    margin-right: 15px; /* Space out the navigation links */
+    font-size: 16px; /* Size of the navigation text */
+    padding: 5px 10px; /* Padding for clickable area */
+    border-radius: 5px; /* Rounded corners for links */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a:hover,
+.nav-left a:hover {
+    background-color: #e6f7ff; /* Light blue background on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+    .nav-left,
+    .nav-right {
+        margin-bottom: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+
+<header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/prediction">Predict</a>
+            </div>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">
+        <h1 class="mb-4">Results History</h1>
+        <div id="resultsTable">
+            {% if prediction_history %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Prediction Type</th>
+                        <th>Likelihood</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for prediction in prediction_history %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ prediction.prediction_type }}</td>
+                        <td>{{ prediction.likelihood }}</td>
+                        <td>{{ prediction.timestamp }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No history found.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

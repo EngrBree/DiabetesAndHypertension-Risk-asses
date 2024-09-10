@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/static/dia.css">
+
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+   <title>Responsive Regisration Form </title>
+</head>
+<body>
+    <div class="container">
+        <header>Registration</header>
+
+        <form action="/signup" method="post">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="email" placeholder="Enter your Email" required name="email" id="name">
+                        </div>
+
+
+                        <div class="input-field">
+                            <label>User Name</label>
+                            <input type="text" placeholder="Enter your UserName" required name="username" id="username">
+                        </div>
+
+
+                        <div class="input-field">
+                            <label>Password</label>
+                            <input type="password" placeholder="Enter your Password" required name="password" id="password" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{6,}$"
+					title="Password must contain at least one number,
+						one alphabet, one symbol, and be at
+						least 6 characters long">
+
+                        </div>
+
+
+
+
+
+                         <div class="input-field">
+                            <label>Date of Birth </label>
+                            <input type="date" placeholder="Enter your Date of Birth" required name="dob" id="dob">
+                        </div>
+
+
+
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select required name="gender" id="gender">
+                                <option disabled selected>Select Your Gender</option>
+                                <option value="1">Male</option>
+                                <option value="0">Female</option>
+                            </select>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText"<a href="index.html">Back</a></span>
+                        </div>
+
+                        <button class="sumbit">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+
+    <script src="/static/dia.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Recommendation</title>
+    <link rel="stylesheet" href="/static/reco.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="v8_4">
+ <header class="header">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link" href="/">Home</a>
+                        <a class="nav-item nav-link" href="/prediction">Predict</a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+                            <a class="dropdown-item" href="/results_history">Results History</a>
+                            <a class="dropdown-item" href="/logout">Logout</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+    <div class="container mt-5">
+
+                {% if likelihood >= 50 %}
+                    <!-- Display recommendations for high likelihood of hypertension -->
+                    <div class="cont">
+            <div class="v9_14">
+                <div class="v9_12">
+                    <div class="v8_5">
+
+                    </div>
+                    <div class="v8_6">
+
+                    </div>
+                    <span class="v8_7">SWAP OUT</span>
+                    <span class="v8_9">SWAP IN</span>
+                    <span class="v8_10">Foods rich in healthy fats such as avocados, nuts</span>
+
+<span class="v8_11">Those foods can raise LDL (bad) cholesterol levels, leading to plaque buildup in the arteries and increasing the risk of hypertension and cardiovascular diseases</span><span class="v8_8">Foods high in saturated fats </span>
+<div class="v9_483">
+
+</div>
+</div>
+</div>
+<div class="v9_13">
+    <div class="v8_15">
+
+    </div>
+    <div class="v8_16">
+
+    </div>
+    <span class="v8_17">SWAP OUT</span>
+    <span class="v8_19">SWAP IN</span>
+    <span class="v8_20">Nutrient-dense foods like fruits,vegetables and whole grain</span>
+
+<span class="v8_21">Processed foods increase the weight and thus increase heart and blood vessels workload</span>
+<span class="v8_8">Processed Foods</span>
+<div class="v9_484">
+
+</div>
+</div>
+
+<div class="v9_18">
+    <div class="v8_5">
+
+    </div>
+    <div class="v8_6">
+
+    </div>
+    <span class="v8_7">SWAP OUT</span>
+    <span class="v8_9">SWAP IN</span>
+    <span class="v8_10">Nicotine replacement therapy </span>
+
+<span class="v8_31">Smoking damages blood vessels, reduces oxygen levels in the blood, and contributes to arterial stiffness, all of which can lead to elevated blood pressure.</span>
+    <span class="v8_8">Cigarettes and tobacco.</span>
+<div class="v9_474">
+
+</div>
+</div>
+
+<div class="v9_19">
+    <div class="v8_5">
+
+    </div>
+    <div class="v8_6">
+
+    </div>
+    <span class="v8_7">SWAP OUT</span>
+    <span class="v8_9">SWAP IN</span>
+    <span class="v8_10">Regular physical activity such as brisk walking, cycling, swimming</span>
+
+<span class="v8_11">Lack of physical activity weakens the heart and circulatory system and increases weight gain,which raises blood pressure and the risk of hypertension .</span>
+<span class="v8_8">Sedentary lifestyle habits</span>
+<div class="v9_474">
+
+</div>
+</div>
+
+<div class="v9_20">
+    <div class="v8_5">
+
+    </div>
+    <div class="v8_6">
+
+    </div>
+    <span class="v8_7">SWAP OUT</span>
+    <span class="v8_9">SWAP IN</span>
+    <span class="v8_10">Moderate alcohol consumption or abstaining from alcohol</span>
+
+<span class="v8_11">Heavy alcohol consumption raises blood pressure, damages blood vessels, and weakens heart function, increasing the risk of hypertension.</span>
+<span class="v8_8">Excessive alcohol consumption</span>
+<div class="v9_474">
+
+</div>
+</div>
+
+                    <div class="v9_22">
+    <div class="card-header1">
+        <h3>Health Alert</h3>
+      </div>
+      <div class="card-body1">
+        <p>Dear Patient,</p>
+        <p>Based on your recent medical evaluation, we regret to inform you that your health condition is not optimal. It is crucial that you take immediate steps to improve your lifestyle and seek professional medical assistance.</p>
+        <p>We strongly recommend that you contact a specialist for further consultation and treatment.</p>
+        <a href="https://hospitals.aku.edu/nairobi/ForPatientAndVisitors/Pages/BookanAppointment.aspx" target="_blank" class="btn1">Contact</a>
+      </div>
+</div>
+
+                {% else %}
+                    <!-- Display recommendations for low likelihood of hypertension -->
+                     <div class="cont">
+            <div class="v9_14">
+                <div class="v9_12">
+                    <div class="v8_5">
+
+                    </div>
+                    <div class="v8_6">
+
+                    </div>
+                    <span class="v8_7">SWAP OUT</span>
+                    <span class="v8_9">SWAP IN</span>
+                    <span class="v8_10">Foods rich in healthy fats such as avocados, nuts</span>
+
+<span class="v8_11">These lean protein sources are rich in omega-3 fatty acids, fiber, and other nutrients that can help lower LDL (bad) cholesterol levels and reduce the risk of heart disease.</span><span class="v8_8">Foods high in saturated fats </span>
+<div class="v9_483">
+
+</div>
+</div>
+</div>
+<div class="v9_13">
+    <div class="v8_15">
+
+    </div>
+    <div class="v8_16">
+
+    </div>
+    <span class="v8_17">SWAP OUT</span>
+    <span class="v8_19">SWAP IN</span>
+    <span class="v8_20">Nutrient-dense foods like fruits,vegetables and whole grain</span>
+
+<span class="v8_21">Nutrient-dense foods provide essential vitamins, minerals, fiber, and antioxidants that  support weight management, and reduce the risk of chronic diseases.</span>
+<span class="v8_8">Processed Foods</span>
+<div class="v9_484">
+
+</div>
+</div>
+
+<div class="v9_18">
+    <div class="v8_5">
+
+    </div>
+    <div class="v8_6">
+
+    </div>
+    <span class="v8_7">SWAP OUT</span>
+    <span class="v8_9">SWAP IN</span>
+    <span class="v8_10">Nicotine replacement therapy </span>
+
+<span class="v8_21">Quitting smoking improves lung function, reduces the risk of heart disease, stroke, respiratory infections, and cancer, and leads to better overall health and quality of life.</span>
+    <span class="v8_8">Cigarettes and tobacco.</span>
+<div class="v9_474">
+
+</div>
+</div>
+
+<div class="v9_19">
+    <div class="v8_5">
+
+    </div>
+    <div class="v8_6">
+
+    </div>
+    <span class="v8_7">SWAP OUT</span>
+    <span class="v8_9">SWAP IN</span>
+    <span class="v8_10">Regular physical activity such as brisk walking, cycling, swimming</span>
+
+<span class="v8_11">Physical activity helps lower blood pressure, strengthen the heart, and improve overall cardiovascular health.</span>
+<span class="v8_8">Sedentary lifestyle habits</span>
+<div class="v9_474">
+
+</div>
+</div>
+
+<div class="v9_20">
+    <div class="v8_5">
+
+    </div>
+    <div class="v8_6">
+
+    </div>
+    <span class="v8_7">SWAP OUT</span>
+    <span class="v8_9">SWAP IN</span>
+    <span class="v8_10">Moderate alcohol consumption or abstaining from alcohol</span>
+
+<span class="v8_11">abstaining from alcohol altogether. Limiting alcohol intake can help lower blood pressure and reduce the risk of hypertension-related complications.</span>
+<span class="v8_8">Excessive alcohol consumption</span>
+<div class="v9_474">
+
+</div>
+</div>
+
+                    <div class="v9_21">
+                     <div class="card-header">
+    <h3>Health Status</h3>
+  </div>
+  <div class="card-body">
+    <p>Dear Patient,</p>
+    <p>Based on your recent medical evaluation, your health condition is currently stable, and the risk level is lower. However, it is essential to maintain a healthy lifestyle to prevent any potential complications.</p>
+    <p>We recommend that you continue following a balanced diet, exercise regularly, and practice stress management techniques.</p>
+    <p>If you notice any significant changes in your health or experience concerning symptoms, please contact a specialist immediately for further evaluation and treatment.</p>
+    <a href="https://www.example-hospital.com/appointment" target="_blank" class="btn">Contact Specialist</a>
+  </div>
+
+
+                    </div>
+                    <!-- Add additional recommendations as needed -->
+                {% endif %}
+
+
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
+    </div>
+</div>
+</body>
+</html>

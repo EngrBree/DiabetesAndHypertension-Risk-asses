@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disease RiskAssess | Homepage</title>
+    <!-- Bootstrap CSS (keeping one version) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery (keeping one version, required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Popper.js (required for Bootstrap's JavaScript plugins) and Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- FontAwesome for icons -->
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <style>
+        #carouselExampleIndicators {
+            height: 80vh;
+        }
+        body {
+    /* Set the background image */
+    background-image: url('/static/img/zy.png'); /* Use your actual image path */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    margin: 0; /* Ensures the body takes up the full viewport height */
+    height: 1360px; /* 100% of the viewport height */
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+body::before {
+    content: ""; /* Necessary for the pseudo-element to work */
+    position: fixed; /* Cover the whole viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    /* Increase the last value (0.5) to make the background darker, decrease it to make it lighter */
+    z-index: -1; /* Ensures the overlay doesn't block content */
+}
+
+
+        nav {
+            background-color: white;
+
+        }
+       /* Changes the color of the brand text */
+       .navbar-brand, .navbar-brand b { /* The 'b' tag selector is included in case you want to ensure bold text also changes color */
+       color: black !important;
+        }
+
+/* Changes the color of the navigation links */
+       .nav-link {
+       color: black !important;
+       font-weight: bold;
+        }
+
+        .collapse.navbar-collapse {
+              color: #333; /* Change the text color */
+              font-size: 16px; /* Change the text size */
+        }
+
+        .carousel-content {
+            text-align: center;
+            color: whitesmoke;
+        }
+        .carousel-content p {
+           font-size: 20px;
+        }
+
+        .carousel-item {
+            margin-top: 15rem;
+        }
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .container-fluid.padding {
+        /*background-color: whitesmoke;*/
+         padding-bottom: 50px; /* Adjust this value as needed */
+            margin-top: 200px;
+         }
+         .social-logo {
+         margin-right: 10px; /* Adjust the space between logos as needed */
+         display: inline-block; /* This ensures that the margin is applied correctly */
+        }
+
+        .large-text {
+    font-size: 18px; /* or whatever size you prefer */
+    font-weight: bold;
+}
+                    /* Additional responsiveness for various devices */
+            @media (max-width: 768px) {
+                background-attachment: scroll;
+                background-size: cover;
+
+				width:60%;
+                height: 60vh; /* This ensures they cover the full viewport height */
+                margin: 0;
+                padding: 0;
+
+				font-family: Arial, sans-serif;
+}
+	}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    width: 75%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    width: 60%;
+  }
+        }
+
+
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <!-- Assuming a direct link to your CSS file -->
+    <!-- <link rel="stylesheet" type="text/css" href="path/to/your/index.css"> -->
+</head>
+<body>
+    form id="form1" class="content">
+    <header>
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+            <a class="navbar-brand" href="#"><b>Discover Your Health Journey: Predicting Diabetes and
+                Hypertension</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/ ">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-item active">
+            <div class="carousel-content" >
+                <h2>Revolutionizing Health Monitoring</h2>
+                <p class="large-text">Our advanced machine learning model seamlessly integrates cutting-edge technology to analyze health data,<br>
+                    offering early detection of diabetes and precision predictions for hypertension. Stay ahead in your health journey with personalized insights,<br>
+                    tailored recommendations, and optimal blood pressure management</p>
+            </div>
+        </div>
+        <!-- Page 2 -->
+        <div class="carousel-item">
+            <div class="carousel-content">
+                <h2>Features and Benefits</h2>
+                <p class="large-text">With real-time analysis and early detection capabilities, <br>our system offers personalized insights into your health risks for diabetes and hypertension.<br> Benefit from tailored recommendations designed to guide you in managing your well-being effectively</p>
+            </div>
+        </div>
+        <!-- Page 3 -->
+        <div class="carousel-item">
+            <div class="carousel-content">
+                <h2>Empower Your Health Journey</h2>
+                <p class="large-text">Our system doesn't just predict; it educates and informs. <br>Understand the nuances of your health data through our intuitive interface, <br>and take proactive steps towards optimal health with confidence. <br>Your journey to managing and preventing diabetes and hypertension begins here.</p>
+            </div>
+        </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!--Connect Section-->
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-12">
+                <h2></h2>
+</div>
+<div class="col-12 social padding">
+    <a class="social-logo" href="https://www.facebook.com/"><img src="../static/img/facebook.png" alt="Facebook" style="width: 24px; height: 24px;"></a>
+    <a class="social-logo" href="https://www.youtube.com/"><img src="../static/img/youtube.png" alt="YouTube" style="width: 24px; height: 24px;"></a>
+    <a class="social-logo" href="https://www.instagram.com/"><img src="../static/img/instagram.png" alt="Instagram" style="width: 24px; height: 24px;"></a>
+    <a class="social-logo" href="https://myaccount.google.com/intro/personal-info"><img src="../static/img/google.png" alt="Google Plus" style="width: 24px; height: 24px;"></a>
+    <a class="social-logo" href="https://twitter.com/"><img src="../static/img/logos.png" alt="Twitter" style="width: 24px; height: 24px;"></a>
+</div>
+
+
+
+</form>
+
+<script>
+    // Auto-scroll the carousel every 3 seconds (adjust as needed)
+    $(document).ready(function () {
+        setInterval(function () {
+            $('#carouselExampleIndicators').carousel('next');
+        }, 3000); // 3000 milliseconds = 3 seconds
+    });
+</script>
+        </div>
+    </div>
+</body>
+
+</html>
